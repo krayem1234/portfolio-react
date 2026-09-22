@@ -1,3 +1,4 @@
+import internlinkHome from '../assets/projects/internlink-home.jpg'
 import internlinkSignin from '../assets/projects/internlink-signin.jpg'
 import internlinkSignup from '../assets/projects/internlink-signup.jpg'
 
@@ -21,8 +22,8 @@ export const projects: Project[] = [
     stack: ['Angular', 'NestJS', 'TypeScript'],
     href: 'https://interlinke-m48uuz5cd-k-ef29.vercel.app',
     repoHref: 'https://github.com/krayem1234/interlink',
-    image: internlinkSignin,
-    images: [internlinkSignin, internlinkSignup],
+    image: internlinkHome,
+    images: [internlinkHome, internlinkSignin, internlinkSignup],
   },
   {
     name: 'Gestion_employes',

@@ -1,6 +1,7 @@
-import { useRef, type MouseEvent } from 'react'
+import { useEffect, useRef, useState, type MouseEvent } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import type { Project } from '../data/projects'
+import { getSkillIcon } from '../data/skillIcons'
 
 export default function ProjectCard({ project, index }: { project: Project; index: number }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -18,6 +19,18 @@ export default function ProjectCard({ project, index }: { project: Project; inde
     `radial-gradient(280px circle at ${gx} ${gy}, rgba(139,92,246,0.18), transparent 70%)`,
   )
 
+  const gallery = project.images && project.images.length > 1 ? project.images : project.image ? [project.image] : []
+  const [activeImage, setActiveImage] = useState(0)
+  const [isHovering, setIsHovering] = useState(false)
+
+  useEffect(() => {
+    if (!isHovering || gallery.length < 2) return
+    const id = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % gallery.length)
+    }, 1400)
+    return () => clearInterval(id)
+  }, [isHovering, gallery.length])
+
   const handleMove = (e: MouseEvent<HTMLDivElement>) => {
     const rect = ref.current?.getBoundingClientRect()
     if (!rect) return
@@ -25,16 +38,18 @@ export default function ProjectCard({ project, index }: { project: Project; inde
     y.set((e.clientY - rect.top) / rect.height)
   }
 
+  const handleEnter = () => setIsHovering(true)
+
   const handleLeave = () => {
     x.set(0.5)
     y.set(0.5)
+    setIsHovering(false)
+    setActiveImage(0)
   }
 
   const openDemo = () => {
     window.open(project.href, '_blank', 'noreferrer')
   }
-
-  const secondImage = project.images?.[1]
 
   return (
     <motion.div
@@ -54,6 +69,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
         }}
         data-cursor-hover
         onMouseMove={handleMove}
+        onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
         className="group glass relative block h-full cursor-pointer overflow-hidden rounded-2xl transition-colors duration-300 hover:border-white/25"
@@ -63,22 +79,31 @@ export default function ProjectCard({ project, index }: { project: Project; inde
           style={{ background: glowBackground }}
         />
 
-        {project.image && (
+        {gallery.length > 0 && (
           <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-white/10 bg-black/40">
-            <img
-              src={project.image}
-              alt={`Aperçu de ${project.title}`}
-              loading="lazy"
-              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            />
-            {secondImage && (
+            {gallery.map((src, i) => (
               <img
-                src={secondImage}
-                alt=""
-                aria-hidden="true"
+                key={src}
+                src={src}
+                alt={i === 0 ? `Aperçu de ${project.title}` : ''}
+                aria-hidden={i === 0 ? undefined : true}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className={`absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-700 ${
+                  i === activeImage ? 'opacity-100' : 'opacity-0'
+                }`}
               />
+            ))}
+            {gallery.length > 1 && (
+              <div className="absolute bottom-2.5 right-3 z-10 flex gap-1">
+                {gallery.map((src, i) => (
+                  <span
+                    key={src}
+                    className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${
+                      i === activeImage ? 'bg-accent-cyan' : 'bg-white/30'
+                    }`}
+                  />
+                ))}
+              </div>
             )}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
           </div>
@@ -124,14 +149,19 @@ export default function ProjectCard({ project, index }: { project: Project; inde
           <p className="relative mt-3 text-sm leading-relaxed text-muted">{project.description}</p>
 
           <div className="relative mt-6 flex flex-wrap gap-2">
-            {project.stack.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-ink/80"
-              >
-                {tech}
-              </span>
-            ))}
+            {project.stack.map((tech) => {
+              const icon = getSkillIcon(tech)
+              const Icon = icon.Icon
+              return (
+                <span
+                  key={tech}
+                  className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-ink/80"
+                >
+                  {Icon && <Icon size={12} color={icon.color} />}
+                  {tech}
+                </span>
+              )
+            })}
           </div>
         </div>
       </motion.div>
