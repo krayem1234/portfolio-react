@@ -1,12 +1,29 @@
+import internlinkSignin from '../assets/projects/internlink-signin.jpg'
+import internlinkSignup from '../assets/projects/internlink-signup.jpg'
+
 export type Project = {
   name: string
   title: string
   description: string
   stack: string[]
   href: string
+  repoHref?: string
+  image?: string
+  images?: string[]
 }
 
 export const projects: Project[] = [
+  {
+    name: 'InternLink',
+    title: 'InternLink',
+    description:
+      "Plateforme professionnelle de gestion des stages : les étudiants postulent et suivent leurs candidatures, les entreprises publient leurs offres, et les administrateurs supervisent l'ensemble — avec authentification sécurisée (email/mot de passe + Google).",
+    stack: ['Angular', 'NestJS', 'TypeScript'],
+    href: 'https://interlinke-m48uuz5cd-k-ef29.vercel.app',
+    repoHref: 'https://github.com/krayem1234/interlink',
+    image: internlinkSignin,
+    images: [internlinkSignin, internlinkSignup],
+  },
   {
     name: 'Gestion_employes',
     title: 'Gestion des employés',

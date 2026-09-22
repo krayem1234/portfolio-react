@@ -13,12 +13,16 @@ export const skillGroups: SkillGroup[] = [
     items: ['Angular', 'React', 'Symfony', 'Bootstrap', 'Tailwind CSS'],
   },
   {
-    title: 'Données',
-    items: ['MySQL', 'Modélisation UML', 'POO'],
+    title: 'Bases de données',
+    items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase'],
+  },
+  {
+    title: 'Concepts',
+    items: ['POO', 'Modélisation UML'],
   },
   {
     title: 'Outils',
-    items: ['Git & GitHub', 'IntelliJ IDEA', 'VS Code', 'Postman'],
+    items: ['Git & GitHub', 'Docker', 'Vercel', 'IntelliJ IDEA', 'VS Code', 'Postman'],
   },
 ]
 
@@ -31,6 +35,9 @@ export const skillTicker: string[] = [
   'React',
   'Symfony',
   'MySQL',
+  'PostgreSQL',
+  'MongoDB',
+  'Firebase',
   'JavaScript',
   'SCSS',
   'Git',

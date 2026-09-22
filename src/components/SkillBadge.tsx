@@ -2,6 +2,7 @@ import { getSkillIcon } from '../data/skillIcons'
 
 export default function SkillBadge({ name }: { name: string }) {
   const icon = getSkillIcon(name)
+  const Icon = icon.Icon
 
   return (
     <div
@@ -9,10 +10,14 @@ export default function SkillBadge({ name }: { name: string }) {
       data-cursor-hover
     >
       <span
-        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold text-bg"
-        style={{ backgroundColor: icon.color }}
+        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold"
+        style={{ backgroundColor: Icon ? `${icon.color}1a` : icon.color }}
       >
-        {icon.label}
+        {Icon ? (
+          <Icon size={16} color={icon.color} />
+        ) : (
+          <span className="text-bg">{icon.label}</span>
+        )}
       </span>
       <span className="truncate">{name}</span>
     </div>
