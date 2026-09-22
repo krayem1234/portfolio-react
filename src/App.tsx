@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 import Background from './components/Background'
 import CustomCursor from './components/CustomCursor'
 import ScrollProgress from './components/ScrollProgress'
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen">
+      <Analytics />
       <AnimatePresence>{loading && <Preloader key="preloader" />}</AnimatePresence>
 
       <Background />
