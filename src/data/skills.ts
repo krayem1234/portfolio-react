@@ -22,7 +22,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: 'Outils',
-    items: ['Git & GitHub', 'Docker', 'Vercel', 'IntelliJ IDEA', 'VS Code', 'Postman'],
+    items: ['Git & GitHub', 'Docker', 'Vercel', 'Postman'],
   },
 ]
 
