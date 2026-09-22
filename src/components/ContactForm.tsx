@@ -160,7 +160,7 @@ export default function ContactForm() {
         whileHover={{ scale: isSending ? 1 : 1.02 }}
         whileTap={{ scale: isSending ? 1 : 0.97 }}
         data-cursor-hover
-        className="btn-primary mt-1 w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:justify-self-start"
+        className="btn-primary mx-auto mt-1 w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {isSending ? 'Envoi en cours...' : 'Envoyer le message'}
       </motion.button>
