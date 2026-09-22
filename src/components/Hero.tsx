@@ -31,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-[13vw] font-bold leading-[0.95] tracking-tight sm:text-[9vw] lg:text-[6.2vw]"
+          className="text-[10.5vw] font-bold leading-[0.95] tracking-tight sm:text-[7.5vw] lg:text-[5vw]"
         >
           Salut, je suis
           <br />

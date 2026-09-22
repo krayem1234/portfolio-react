@@ -1,7 +1,7 @@
 export const profile = {
   avatar: 'https://avatars.githubusercontent.com/u/131613998?v=4',
   name: 'Mohamed Karim Kebaili',
-  shortName: 'Karim Kebaili',
+  shortName: 'Mohamed Karim Kebaili',
   role: 'Étudiant en informatique & Développeur',
   tagline:
     "Je conçois des applications web et logicielles robustes, du backend au frontend — Java, PHP, Angular et TypeScript.",
