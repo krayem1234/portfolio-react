@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink font-body antialiased overflow-x-hidden;
+  }
+
+  ::selection {
+    @apply bg-accent-violet/40 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05060a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b5cf6, #22d3ee);
+    border-radius: 999px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  /* Hide the native cursor only where a fine pointer (mouse) is present */
+  @media (pointer: fine) {
+    body {
+      cursor: none;
+    }
+    a,
+    button {
+      cursor: none;
+    }
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-[linear-gradient(100deg,#8b5cf6_0%,#22d3ee_50%,#f472b6_100%)];
+  }
+
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
+  }
+
+  .section-pad {
+    @apply px-6 sm:px-10 lg:px-24;
+  }
+
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-medium text-sm tracking-wide transition-transform duration-300 will-change-transform;
+  }
+
+  .btn-primary {
+    @apply btn text-bg bg-[linear-gradient(100deg,#8b5cf6,#22d3ee)] hover:scale-[1.04] active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply btn glass text-ink hover:border-white/30 hover:scale-[1.04] active:scale-95;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
