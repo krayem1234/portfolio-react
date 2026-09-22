@@ -165,7 +165,7 @@ export default function ContactForm() {
         {isSending ? 'Envoi en cours...' : 'Envoyer le message'}
       </motion.button>
 
-      <p className="text-xs text-muted">
+      <p className="text-center text-xs text-muted">
         {status === 'sent' &&
           (usesWeb3Forms
             ? '✓ Message envoyé — merci, je réponds dès que possible !'
