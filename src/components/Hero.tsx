@@ -63,6 +63,14 @@ export default function Hero() {
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <MagneticButton href="#projects">Voir mes projets</MagneticButton>
+          <MagneticButton
+            href="/CV-Mohamed-Karim-Kebaili.pdf"
+            variant="ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Télécharger mon CV
+          </MagneticButton>
           <MagneticButton href="#contact" variant="ghost">
             Me contacter
           </MagneticButton>

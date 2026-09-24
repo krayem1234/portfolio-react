@@ -52,13 +52,29 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <a
-            href={`mailto:${profile.email}`}
-            data-cursor-hover
-            className="hidden rounded-full border border-white/15 px-5 py-2 text-sm font-medium text-ink transition hover:border-white/40 md:inline-flex"
-          >
-            Me contacter
-          </a>
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="/CV-Mohamed-Karim-Kebaili.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor-hover
+              className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-ink"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                <path d="M12 3v12" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M5 21h14" />
+              </svg>
+              CV
+            </a>
+            <a
+              href={`mailto:${profile.email}`}
+              data-cursor-hover
+              className="inline-flex rounded-full border border-white/15 px-5 py-2 text-sm font-medium text-ink transition hover:border-white/40"
+            >
+              Me contacter
+            </a>
+          </div>
 
           <button
             onClick={() => setOpen((v) => !v)}
@@ -91,6 +107,15 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="/CV-Mohamed-Karim-Kebaili.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-white/5 hover:text-ink"
+            >
+              CV
+            </a>
           </motion.nav>
         )}
       </div>
