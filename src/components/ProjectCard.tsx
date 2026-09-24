@@ -148,17 +148,30 @@ export default function ProjectCard({ project, index }: { project: Project; inde
           <h3 className="relative mt-6 font-display text-xl font-semibold">{project.title}</h3>
           <p className="relative mt-3 text-sm leading-relaxed text-muted">{project.description}</p>
 
-          <div className="relative mt-6 flex flex-wrap gap-2">
+          <div className="relative mt-6 flex flex-wrap items-center gap-3">
             {project.stack.map((tech) => {
               const icon = getSkillIcon(tech)
               const Icon = icon.Icon
               return (
                 <span
                   key={tech}
-                  className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-ink/80"
+                  className="group/tech relative flex items-center"
+                  data-cursor-hover
+                  title={tech}
                 >
-                  {Icon && <Icon size={12} color={icon.color} />}
-                  {tech}
+                  {Icon ? (
+                    <Icon size={22} color={icon.color} />
+                  ) : (
+                    <span
+                      className="flex h-5 w-5 items-center justify-center rounded text-[8px] font-bold text-bg"
+                      style={{ backgroundColor: icon.color }}
+                    >
+                      {icon.label}
+                    </span>
+                  )}
+                  <span className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-[10px] font-medium text-white opacity-0 transition-opacity duration-150 group-hover/tech:opacity-100">
+                    {tech}
+                  </span>
                 </span>
               )
             })}
