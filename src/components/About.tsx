@@ -33,6 +33,33 @@ export default function About() {
               </div>
             </div>
             <p className="text-xl leading-relaxed text-muted">{profile.bio}</p>
+
+            <div className="mt-8 flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#8b5cf6,#22d3ee)]/15">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-5 w-5 text-accent-cyan"
+                >
+                  <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+                  <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-display text-sm font-semibold">{profile.education.school}</p>
+                <p className="mt-0.5 text-xs text-muted">{profile.education.schoolFull}</p>
+                <p className="mt-2 text-sm text-muted">{profile.education.program}</p>
+                <p className="mt-1 text-sm">
+                  <span className="text-ink">{profile.education.year}</span>
+                  <span className="text-muted"> · {profile.education.status}</span>
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           <div id="skills" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-3 scroll-mt-28">

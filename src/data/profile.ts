@@ -7,6 +7,13 @@ export const profile = {
     "Je conçois des applications web et logicielles robustes, du backend au frontend — Java, PHP, Angular et TypeScript.",
   bio: "Étudiant en informatique passionné par la programmation orientée objet et le développement web, j'aime transformer des besoins concrets en applications propres et fonctionnelles. Curieux et rigoureux, je multiplie les projets personnels et académiques pour explorer aussi bien le backend (Java, PHP) que le frontend (Angular, TypeScript).",
   location: 'Tunisie',
+  education: {
+    school: 'ESPRIT',
+    schoolFull: "École Supérieure Privée d'Ingénierie et de Technologies",
+    program: 'Cycle ingénieur — Génie Logiciel, filière TWIN',
+    year: '5ème année',
+    status: 'En cours',
+  },
   email: 'karim.kebaili@esprit.tn',
   github: 'https://github.com/krayem1234',
   availability: 'Ouvert aux stages & opportunités',
