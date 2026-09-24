@@ -75,7 +75,7 @@ export default function About() {
                 <h3 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-accent-violet">
                   {group.title}
                 </h3>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="flex flex-wrap gap-4">
                   {group.items.map((item) => (
                     <SkillBadge key={item} name={item} />
                   ))}
