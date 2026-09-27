@@ -31,7 +31,7 @@ export const experience: ExperienceItem[] = [
   {
     company: 'STEG',
     role: 'Stage social — Découverte du monde professionnel',
-    period: 'Été 2023 · 1 mois',
+    period: 'Été 2023 · 4 semaines',
     location: 'Tunisie',
     points: [
       "Première immersion en entreprise : observation de l'organisation, des processus internes et du fonctionnement d'un grand groupe public tunisien.",
