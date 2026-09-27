@@ -7,7 +7,7 @@ export default function Projects() {
     <section id="projects" className="section-pad relative scroll-mt-24 py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          index="02 / Projets"
+          index="03 / Projets"
           title="Ce que j'ai construit"
           subtitle="Une sélection de projets académiques et personnels — code disponible sur GitHub."
         />
