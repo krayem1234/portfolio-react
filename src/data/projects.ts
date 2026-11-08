@@ -73,4 +73,28 @@ export const projects: Project[] = [
     stack: ['SCSS', 'CSS3'],
     href: 'https://github.com/krayem1234/template',
   },
+  {
+    name: 'AsnafAgro',
+    title: 'ASNAF AGRO',
+    description:
+      "Site vitrine et back-office d'une entreprise de produits agricoles : gestion des produits et du contenu côté front-office, administration complète côté back-office.",
+    stack: ['PHP', 'MySQL', 'jQuery', 'Bootstrap'],
+    href: 'http://asnafagro.infy.click/',
+  },
+  {
+    name: 'HeatAlert',
+    title: 'HeatAlert',
+    description:
+      "Application web de prévention pendant les vagues de chaleur : suivi des alertes météo, coupures d'électricité en temps réel, points de fraîcheur à proximité, conseils et entraide entre voisins.",
+    stack: ['Laravel', 'PHP', 'MySQL'],
+    href: 'https://heatalert-ld4p.onrender.com/',
+  },
+  {
+    name: 'SkillForge',
+    title: 'SkillForge',
+    description:
+      "Plateforme d'e-learning : cours en ligne, quiz corrigés par IA, mentorat en direct avec les formateurs, certificats vérifiables par QR code et espace carrière avec matching de compétences.",
+    stack: ['Django', 'Python', 'IA'],
+    href: 'https://skillforge-g36b.onrender.com/',
+  },
 ]
