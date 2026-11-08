@@ -1,6 +1,8 @@
 import internlinkHome from '../assets/projects/internlink-home.jpg'
 import internlinkSignin from '../assets/projects/internlink-signin.jpg'
 import internlinkSignup from '../assets/projects/internlink-signup.jpg'
+import heatalertHome from '../assets/projects/heatalert-home.jpg'
+import skillforgeHome from '../assets/projects/skillforge-home.jpg'
 
 export type Project = {
   name: string
@@ -88,6 +90,7 @@ export const projects: Project[] = [
       "Application web de prévention pendant les vagues de chaleur : suivi des alertes météo, coupures d'électricité en temps réel, points de fraîcheur à proximité, conseils et entraide entre voisins.",
     stack: ['Laravel', 'PHP', 'MySQL'],
     href: 'https://heatalert-ld4p.onrender.com/',
+    image: heatalertHome,
   },
   {
     name: 'SkillForge',
@@ -96,5 +99,6 @@ export const projects: Project[] = [
       "Plateforme d'e-learning : cours en ligne, quiz corrigés par IA, mentorat en direct avec les formateurs, certificats vérifiables par QR code et espace carrière avec matching de compétences.",
     stack: ['Django', 'Python', 'IA'],
     href: 'https://skillforge-g36b.onrender.com/',
+    image: skillforgeHome,
   },
 ]
