@@ -2,6 +2,7 @@ import internlinkHome from '../assets/projects/internlink-home.jpg'
 import internlinkSignin from '../assets/projects/internlink-signin.jpg'
 import internlinkSignup from '../assets/projects/internlink-signup.jpg'
 import heatalertHome from '../assets/projects/heatalert-home.jpg'
+import asnafagroHome from '../assets/projects/asnafagro-home.jpg'
 import skillforgeHome from '../assets/projects/skillforge-home.jpg'
 import boardLiveHome from '../assets/projects/board-live-home.jpg'
 
@@ -35,6 +36,7 @@ export const projects: Project[] = [
       "Site vitrine et back-office d'une entreprise de produits agricoles : gestion des produits et du contenu côté front-office, administration complète côté back-office.",
     stack: ['PHP', 'MySQL', 'jQuery', 'Bootstrap'],
     href: 'http://asnafagro.infy.click/',
+    image: asnafagroHome,
   },
   {
     name: 'HeatAlert',
