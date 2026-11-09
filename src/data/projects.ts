@@ -3,6 +3,7 @@ import internlinkSignin from '../assets/projects/internlink-signin.jpg'
 import internlinkSignup from '../assets/projects/internlink-signup.jpg'
 import heatalertHome from '../assets/projects/heatalert-home.jpg'
 import skillforgeHome from '../assets/projects/skillforge-home.jpg'
+import boardLiveHome from '../assets/projects/board-live-home.jpg'
 
 export type Project = {
   name: string
@@ -52,5 +53,15 @@ export const projects: Project[] = [
     stack: ['Django', 'Python', 'IA'],
     href: 'https://skillforge-g36b.onrender.com/',
     image: skillforgeHome,
+  },
+  {
+    name: 'BoardLive',
+    title: 'Board Live',
+    description:
+      "Outil de gestion de projet collaboratif en temps réel façon Trello : tableaux, listes et cartes avec glisser-déposer, synchronisés instantanément entre tous les membres connectés via WebSocket, avec présence live et invitations par email.",
+    stack: ['NestJS', 'Socket.IO', 'React', 'PostgreSQL'],
+    href: 'https://board-live.vercel.app',
+    repoHref: 'https://github.com/krayem1234/board-live',
+    image: boardLiveHome,
   },
 ]
